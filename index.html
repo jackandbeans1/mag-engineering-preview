@@ -62,7 +62,7 @@
   --body:    "Archivo", system-ui, sans-serif;
   --mono:    "IBM Plex Mono", ui-monospace, monospace;
 
-  --pad: clamp(1.15rem, 5vw, 4.5rem);
+  --pad: clamp(1.15rem, 3vw, 3rem);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -72,7 +72,7 @@ section[id]{scroll-margin-top:88px}
 img{display:block;max-width:100%}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
-.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--pad)}
+.wrap{max-width:1520px;margin:0 auto;padding-inline:var(--pad)}
 
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.94;letter-spacing:-.005em;margin:0;text-transform:uppercase}
 h1{font-size:clamp(2.5rem,5.4vw,4.6rem)}
@@ -107,6 +107,7 @@ p{margin:0 0 1rem}
 
 /* ── Hero: photography under a white badge, mirroring the logo ── */
 .hero{position:relative;background:var(--black);overflow:hidden}
+.hero .wrap{max-width:1240px}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:grayscale(.4) contrast(1.08)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.7))}
 .hero-in{position:relative;z-index:2;padding-block:clamp(2.5rem,5vw,4rem)}
@@ -133,9 +134,13 @@ p{margin:0 0 1rem}
 .cred small{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 @media(max-width:720px){.cred{flex:1 1 50%;border-right:0;padding-right:1rem}}
 
-.sec{padding-block:clamp(3.25rem,7vw,6rem)}
-.sec-head{max-width:60ch;margin-bottom:2.75rem}
+.sec{padding-block:clamp(3.25rem,6vw,5.5rem)}
+.sec-head{max-width:60ch;margin-bottom:clamp(2.25rem,4vw,3rem)}
 .sec-head p{color:var(--ink-soft);font-size:1.06rem;margin-top:1rem}
+.split-head{max-width:none;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(2rem,6vw,6rem);align-items:end}
+.split-head>div .eyebrow{margin-top:0}
+.split-head>p{max-width:62ch;margin:0;color:var(--ink-soft);font-size:1rem}
+@media(max-width:760px){.split-head{grid-template-columns:1fr;gap:1.5rem}}
 
 /* ── Wet/dry axis: the logo's red-to-blue gradient, made literal ── */
 .axis{display:flex;align-items:stretch;border:var(--keyline);margin-bottom:2.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
@@ -149,6 +154,8 @@ p{margin:0 0 1rem}
 .svc ul{list-style:none;margin:1.15rem 0 0;padding:0}
 .svc li{padding:.55rem 0 .55rem 1.35rem;border-top:1px solid var(--hairline);position:relative;font-size:.95rem}
 .svc li::before{content:"";position:absolute;left:0;top:1.05rem;width:7px;height:7px;background:var(--c)}
+@media(max-width:1100px){.svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
 
 /* ── Equipment band ── */
 .band{position:relative;overflow:hidden;background:linear-gradient(135deg,#F1F3F8 0%,var(--paper) 62%);color:var(--black);border-block:var(--keyline-lg)}
@@ -177,9 +184,10 @@ p{margin:0 0 1rem}
 .who div{border-top:8px solid var(--c);padding-top:1.15rem}
 .who h3{margin-bottom:.55rem}
 .who p{color:var(--ink-soft);font-size:.97rem;margin:0}
+@media(max-width:900px){.who{grid-template-columns:1fr}}
 
-.work-section{padding-block:clamp(3.5rem,7vw,6.5rem);background:linear-gradient(180deg,var(--paper),#F1F3F8);border-top:var(--keyline-lg)}
-.work-section .wrap{max-width:1480px}
+.work-section{padding-block:clamp(3.5rem,6vw,5.5rem);background:linear-gradient(180deg,var(--paper),#F1F3F8);border-top:var(--keyline-lg)}
+.work-section .wrap{max-width:1600px}
 .work-section .sec-head{max-width:none;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(2rem,6vw,6rem);align-items:end}
 .work-section .sec-head>div p{margin-top:0}
 .work-intro{max-width:62ch;margin:0;color:var(--ink-soft);font-size:1rem}
@@ -202,18 +210,22 @@ p{margin:0 0 1rem}
 .carousel-thumb:hover{background:var(--paper);opacity:1;translate:0 -2px}
 .carousel-thumb[aria-selected="true"]{border-color:var(--blue);opacity:1}
 .carousel-thumb img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-@media(max-width:760px){.work-section .sec-head{grid-template-columns:1fr}.carousel-stage{aspect-ratio:4/3}.carousel-btn{width:3rem;height:3rem;font-size:1.75rem}.carousel-prev{left:.65rem}.carousel-next{right:.65rem}.carousel-thumb{flex-basis:92px}.carousel-meta{padding:.85rem 1rem}.carousel-caption{font-size:.8rem}}
+@media(max-width:760px){.work-section .sec-head{grid-template-columns:1fr}.carousel-stage{aspect-ratio:4/3}.carousel-btn{width:3rem;height:3rem;font-size:1.75rem}.carousel-prev{left:.65rem}.carousel-next{right:.65rem}.carousel-thumb{flex-basis:92px}.carousel-meta{padding:.85rem 1rem}.carousel-caption{font-size:.68rem}}
 
-.area-section .sec-head{max-width:none;display:grid;grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr);gap:clamp(2.5rem,8vw,8rem);align-items:end}
-.area-heading h2{max-width:15ch}
-.area-details>p{max-width:48ch;margin:0;color:var(--ink-soft)}
-.area{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem;margin-top:1.5rem}
-.area span{display:flex;align-items:center;justify-content:center;min-height:46px;font-family:var(--mono);font-size:.76rem;text-align:center;border:1px solid var(--black);padding:.55rem .75rem;background:var(--paper-2)}
-@media(max-width:850px){.area-section .sec-head{grid-template-columns:1fr;gap:1.5rem}.area-heading h2{max-width:none}}
+.area-section{padding-block:clamp(3.25rem,5vw,4.5rem);background:var(--black);color:#fff;border-block:var(--keyline-lg)}
+.area-section .wrap{max-width:1600px}
+.area-section .sec-head{max-width:none;display:grid;grid-template-columns:minmax(0,.82fr) minmax(500px,1.18fr);gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.area-section .eyebrow{color:rgba(255,255,255,.62)}
+.area-heading h2{max-width:16ch}
+.area-details>p{max-width:54ch;margin:0;color:rgba(255,255,255,.72)}
+.area{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.65rem;margin-top:1.4rem}
+.area span{display:flex;align-items:center;justify-content:center;min-height:48px;font-family:var(--mono);font-size:.74rem;text-align:center;border:1px solid rgba(255,255,255,.55);padding:.55rem .75rem;background:rgba(255,255,255,.06);color:#fff}
+@media(max-width:900px){.area-section .sec-head{grid-template-columns:1fr;gap:1.5rem}.area-heading h2{max-width:none}}
 @media(max-width:560px){.area{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ── Contact ── */
 .contact{background:var(--paper-2);border-top:var(--keyline-lg)}
+.area-section+.contact{border-top:0}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
 .big-phone{font-family:var(--display);font-weight:700;font-size:clamp(2.3rem,6vw,4rem);line-height:1;text-decoration:none;color:var(--red);display:inline-block;margin-block:.4rem 1.4rem}
 .big-phone:hover{color:var(--red-deep)}
@@ -284,9 +296,11 @@ button:hover{background:var(--red-deep)}
 
 <section class="sec" id="services">
   <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Scope of work</p>
-      <h2>Wet, dry, and everything between</h2>
+    <div class="sec-head split-head rv">
+      <div>
+        <p class="eyebrow">Scope of work</p>
+        <h2>Wet, dry, and everything between</h2>
+      </div>
       <p>The trade splits underground work into wet utilities and dry utilities. We do both, plus the earthwork on either side — so one crew opens the trench, makes the tie-in, and closes it back up to grade.</p>
     </div>
 
@@ -427,7 +441,7 @@ button:hover{background:var(--red-deep)}
   </div>
 </section>
 
-<section class="sec area-section" id="area" style="padding-top:0">
+<section class="sec area-section" id="area">
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:0">
       <div class="area-heading">
