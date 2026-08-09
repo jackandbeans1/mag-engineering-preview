@@ -204,8 +204,13 @@ p{margin:0 0 1rem}
 .carousel-thumb img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 @media(max-width:760px){.work-section .sec-head{grid-template-columns:1fr}.carousel-stage{aspect-ratio:4/3}.carousel-btn{width:3rem;height:3rem;font-size:1.75rem}.carousel-prev{left:.65rem}.carousel-next{right:.65rem}.carousel-thumb{flex-basis:92px}.carousel-meta{padding:.85rem 1rem}.carousel-caption{font-size:.8rem}}
 
-.area{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
-.area span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--black);padding:.4rem .8rem;background:var(--paper-2)}
+.area-section .sec-head{max-width:none;display:grid;grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr);gap:clamp(2.5rem,8vw,8rem);align-items:end}
+.area-heading h2{max-width:15ch}
+.area-details>p{max-width:48ch;margin:0;color:var(--ink-soft)}
+.area{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem;margin-top:1.5rem}
+.area span{display:flex;align-items:center;justify-content:center;min-height:46px;font-family:var(--mono);font-size:.76rem;text-align:center;border:1px solid var(--black);padding:.55rem .75rem;background:var(--paper-2)}
+@media(max-width:850px){.area-section .sec-head{grid-template-columns:1fr;gap:1.5rem}.area-heading h2{max-width:none}}
+@media(max-width:560px){.area{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* ── Contact ── */
 .contact{background:var(--paper-2);border-top:var(--keyline-lg)}
@@ -422,16 +427,20 @@ button:hover{background:var(--red-deep)}
   </div>
 </section>
 
-<section class="sec" id="area" style="padding-top:0">
+<section class="sec area-section" id="area" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv" style="margin-bottom:0">
-      <p class="eyebrow">Service area</p>
-      <h2>North San Diego County &amp; South Riverside</h2>
-      <p>Based in Fallbrook, working the corridor between the 15 and the coast.</p>
-      <div class="area">
-        <span>Fallbrook</span><span>Bonsall</span><span>Rainbow</span><span>De Luz</span>
-        <span>Temecula</span><span>Murrieta</span><span>Vista</span><span>Oceanside</span>
-        <span>San Marcos</span><span>Valley Center</span><span>Escondido</span><span>Pala</span>
+      <div class="area-heading">
+        <p class="eyebrow">Service area</p>
+        <h2>North San Diego County &amp; South Riverside</h2>
+      </div>
+      <div class="area-details">
+        <p>Based in Fallbrook, working the corridor between the 15 and the coast.</p>
+        <div class="area">
+          <span>Fallbrook</span><span>Bonsall</span><span>Rainbow</span><span>De Luz</span>
+          <span>Temecula</span><span>Murrieta</span><span>Vista</span><span>Oceanside</span>
+          <span>San Marcos</span><span>Valley Center</span><span>Escondido</span><span>Pala</span>
+        </div>
       </div>
     </div>
   </div>
