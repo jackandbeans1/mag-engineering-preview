@@ -115,7 +115,7 @@ p{margin:0 0 1rem}
 }
 
 .sec{padding-block:var(--section-space)}
-.section-header{max-width:60ch;margin-bottom:var(--section-head-space)}
+.section-header{max-width:none;margin-bottom:var(--section-head-space)}
 .section-header--split{max-width:none;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:var(--column-gap);align-items:end}
 .section-header--split>div .section-kicker{margin:0 0 var(--kicker-gap)}
 .section-header__copy{max-width:62ch;margin:0;color:var(--ink-soft);font-size:1rem}
@@ -147,7 +147,6 @@ p{margin:0 0 1rem}
 
 /* ── Equipment band ── */
 .band{position:relative;overflow:hidden;background:linear-gradient(135deg,#F1F3F8 0%,var(--paper) 62%);color:var(--black);border-block:var(--keyline-lg)}
-.band::before{content:"";position:absolute;top:0;right:0;width:clamp(8rem,24vw,22rem);height:10px;background:linear-gradient(90deg,var(--blue),var(--blue-sky))}
 .band .wrap{position:relative}
 .rent{display:grid;grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);gap:var(--column-gap);align-items:stretch}
 .rent-list{padding:clamp(1rem,2vw,1.5rem) clamp(1.15rem,2.5vw,1.8rem)}
