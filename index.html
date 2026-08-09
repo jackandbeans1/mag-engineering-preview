@@ -139,17 +139,27 @@ p{margin:0 0 1rem}
 .svc li::before{content:"";position:absolute;left:0;top:1.05rem;width:7px;height:7px;background:var(--c)}
 
 /* ── Equipment band ── */
-.band{background:var(--black);color:#fff;border-block:var(--keyline-lg)}
-.band .sec-head p{color:rgba(255,255,255,.7)}
-.band .eyebrow{color:rgba(255,255,255,.55)}
-.rent{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.band{position:relative;overflow:hidden;background:linear-gradient(135deg,#F1F3F8 0%,var(--paper) 62%);color:var(--black);border-block:var(--keyline-lg)}
+.band::before{content:"";position:absolute;top:0;right:0;width:clamp(8rem,24vw,22rem);height:10px;background:linear-gradient(90deg,var(--blue),var(--blue-sky))}
+.band .wrap{position:relative}
+.band .sec-head{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(290px,.72fr);column-gap:clamp(2rem,6vw,6rem);align-items:end}
+.band .sec-head .eyebrow{grid-column:1/-1;color:var(--ink-soft)}
+.band .sec-head p:not(.eyebrow){color:var(--ink-soft);margin:0 0 .2rem;max-width:46ch}
+.rent{display:grid;grid-template-columns:minmax(300px,.82fr) minmax(0,1.18fr);gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.rent-list{background:var(--paper);border:var(--keyline);border-top:10px solid var(--blue);padding:clamp(1rem,2vw,1.5rem) clamp(1.15rem,2.5vw,1.8rem)}
+.rent-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 .4rem}
 .rent ul{list-style:none;margin:0;padding:0}
-.rent li{padding:.75rem 0;border-top:1px solid rgba(255,255,255,.2);display:flex;gap:1rem;align-items:baseline}
-.rent li b{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--blue-sky);flex:0 0 2rem}
-.rent-media{display:grid;gap:1.25rem}
-.rent-media a{display:block;cursor:zoom-in}
-.rent-media img{aspect-ratio:16/10;object-fit:cover;border:var(--keyline);outline:1px solid rgba(255,255,255,.25)}
-@media(max-width:880px){.rent{grid-template-columns:1fr}}
+.rent li{padding:1rem 0;border-top:1px solid var(--hairline);display:grid;grid-template-columns:2.4rem 1fr;gap:.8rem;align-items:start;line-height:1.4}
+.rent li:first-child{border-top:0}
+.rent li b{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;color:var(--blue);padding-top:.18rem}
+.rent-media{position:relative;min-height:clamp(430px,42vw,560px)}
+.rent-media::before{content:"";position:absolute;inset:2.2rem 0 2rem 15%;background:var(--blue);border:var(--keyline)}
+.rent-media a{display:block;position:absolute;cursor:zoom-in;background:var(--paper);border:var(--keyline);box-shadow:0 14px 32px rgba(0,0,0,.16)}
+.rent-media a:first-child{top:0;right:0;width:88%;z-index:1}
+.rent-media a:last-child{left:0;bottom:0;width:68%;z-index:2}
+.rent-media img{width:100%;aspect-ratio:16/10;object-fit:cover}
+@media(max-width:880px){.band .sec-head,.rent{grid-template-columns:1fr}.band .sec-head p:not(.eyebrow){margin-top:1rem}.rent-media{min-height:clamp(400px,74vw,560px)}}
+@media(max-width:560px){.rent-media{min-height:0;display:grid;gap:1rem}.rent-media::before{display:none}.rent-media a,.rent-media a:first-child,.rent-media a:last-child{position:static;width:100%;box-shadow:none}.rent-media img{aspect-ratio:16/10}}
 
 .who{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.75rem}
 .who div{border-top:8px solid var(--c);padding-top:1.15rem}
@@ -310,7 +320,8 @@ button:hover{background:var(--red-deep)}
       <p>Plumbers, electricians, concrete contractors and homeowners hire us when the hole needs to be dug right and nobody on their crew wants to run the machine. You get the equipment and the person who knows how to use it.</p>
     </div>
     <div class="rent">
-      <div class="rv">
+      <div class="rent-list rv">
+        <p class="rent-label">Experienced operator included</p>
         <ul>
           <li><b>01</b> Operated excavator rental — trenching, footings, site prep</li>
           <li><b>02</b> Operated skid steer and Bobcat service — tight-access grading</li>
