@@ -32,7 +32,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20260809-3">
 </head>
 <body>
 
@@ -81,12 +81,12 @@
 
 <section class="sec" id="services">
   <div class="wrap">
-    <div class="sec-head split-head rv">
+    <div class="section-header section-header--split rv">
       <div>
         <p class="eyebrow">Scope of work</p>
         <h2>Wet, dry, and everything between</h2>
       </div>
-      <p>The trade splits underground work into wet utilities and dry utilities. We do both, plus the earthwork on either side — so one crew opens the trench, makes the tie-in, and closes it back up to grade.</p>
+      <p class="section-header__copy">The trade splits underground work into wet utilities and dry utilities. We do both, plus the earthwork on either side — so one crew opens the trench, makes the tie-in, and closes it back up to grade.</p>
     </div>
 
     <div class="axis rv" aria-hidden="true">
@@ -95,7 +95,7 @@
     </div>
 
     <div class="svc-grid rv">
-      <div class="svc" style="--c:var(--blue)">
+      <div class="panel accent-panel accent-blue svc">
         <p class="tag">Wet utilities</p>
         <h3>Water &amp; Fire Service</h3>
         <ul>
@@ -105,7 +105,7 @@
           <li>Pressure testing and agency sign-off</li>
         </ul>
       </div>
-      <div class="svc" style="--c:var(--blue-deep)">
+      <div class="panel accent-panel accent-blue-deep svc">
         <p class="tag">Wet utilities</p>
         <h3>Sewer, Septic &amp; Storm</h3>
         <ul>
@@ -116,7 +116,7 @@
           <li>Grease and sand interceptors</li>
         </ul>
       </div>
-      <div class="svc" style="--c:var(--red)">
+      <div class="panel accent-panel accent-red svc">
         <p class="tag">Dry utilities</p>
         <h3>Electrical Service</h3>
         <ul>
@@ -125,7 +125,7 @@
           <li>Conduit, substructure and vaults</li>
         </ul>
       </div>
-      <div class="svc" style="--c:var(--red-deep)">
+      <div class="panel accent-panel accent-red-deep svc">
         <p class="tag">Dry utilities</p>
         <h3>Gas Service</h3>
         <ul>
@@ -140,15 +140,15 @@
 
 <section class="sec band" id="equipment">
   <div class="wrap">
-    <div class="sec-head split-head rv">
+    <div class="section-header section-header--split rv">
       <div>
         <p class="eyebrow">Earthwork &amp; operated rental</p>
         <h2>Machine and operator, by the day</h2>
       </div>
-      <p>Plumbers, electricians, concrete contractors and homeowners hire us when the hole needs to be dug right and nobody on their crew wants to run the machine. You get the equipment and the person who knows how to use it.</p>
+      <p class="section-header__copy">Plumbers, electricians, concrete contractors and homeowners hire us when the hole needs to be dug right and nobody on their crew wants to run the machine. You get the equipment and the person who knows how to use it.</p>
     </div>
     <div class="rent">
-      <div class="rent-list rv">
+      <div class="panel accent-panel accent-blue rent-list rv">
         <p class="rent-label">Experienced operator included</p>
         <ul>
           <li><b>01</b> Operated excavator rental — trenching, footings, site prep</li>
@@ -173,22 +173,25 @@
   </div>
 </section>
 
-<section class="sec">
+<section class="sec" id="customers">
   <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow">Who we work for</p>
-      <h2>Three kinds of calls</h2>
+    <div class="section-header section-header--split rv">
+      <div>
+        <p class="eyebrow">Who we work for</p>
+        <h2>Three kinds of calls</h2>
+      </div>
+      <p class="section-header__copy">Direct help for property owners, extra capability for licensed trades, and complete underground scope for general contractors.</p>
     </div>
     <div class="who rv">
-      <div style="--c:var(--red)">
+      <div class="panel accent-panel accent-red audience-card">
         <h3>Homeowners</h3>
         <p>Failing septic, a new water or sewer lateral, a driveway that needs to come out, power run to a barn or ADU. We walk the property and tell you what it actually takes.</p>
       </div>
-      <div style="--c:var(--black)">
+      <div class="panel accent-panel accent-black audience-card">
         <h3>Trade contractors</h3>
         <p>You have the license and the scope, you just need the trench, the machine, or the backfill. We show up with an operator and stay out of your schedule's way.</p>
       </div>
-      <div style="--c:var(--blue)">
+      <div class="panel accent-panel accent-blue audience-card">
         <h3>General contractors</h3>
         <p>Public works and upscale residential from the ground down — joint trench, utility coordination, storm drainage, and structural backfill signed off and ready for concrete.</p>
       </div>
@@ -198,9 +201,9 @@
 
 <section class="sec work-section" id="work">
   <div class="wrap">
-    <div class="sec-head split-head rv">
+    <div class="section-header section-header--split rv">
       <div><p class="eyebrow">On the job</p><h2>Recent work</h2></div>
-      <p class="work-intro">Browse selected utility, excavation, and site work. Choose a thumbnail to move through the gallery, or open the main photo to view it full size.</p>
+      <p class="section-header__copy">Browse selected utility, excavation, and site work. Choose a thumbnail to move through the gallery, or open the main photo to view it full size.</p>
     </div>
     <div class="carousel rv" data-gallery role="region" aria-label="Recent work photo gallery" tabindex="0">
       <div class="carousel-stage">
@@ -230,7 +233,7 @@
 
 <section class="sec area-section" id="area">
   <div class="wrap">
-    <div class="sec-head split-head rv">
+    <div class="section-header section-header--split rv">
       <div class="area-heading">
         <p class="eyebrow">Service area</p>
         <h2>North San Diego County &amp; South Riverside</h2>
@@ -258,7 +261,7 @@
       <div class="det"><b>Hours</b><span>Call for current availability</span></div>
     </div>
     <div class="rv">
-      <form id="bid-form" action="mailto:bill@maginc.ai" method="post" enctype="text/plain">
+      <form class="panel bid-form" id="bid-form" action="mailto:bill@maginc.ai" method="post" enctype="text/plain">
         <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
         <div><label for="f-email">Email (optional)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
@@ -274,7 +277,7 @@
           </select>
         </div>
         <div><label for="f-msg">Job address and details</label><textarea id="f-msg" name="message" required></textarea></div>
-        <button type="submit">Prepare email request</button>
+        <button class="btn btn-red form-submit" type="submit">Prepare email request</button>
         <p class="form-note">This opens your email app with the project details filled in. Prefer to talk? Call us directly.</p>
       </form>
     </div>

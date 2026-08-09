@@ -29,6 +29,22 @@ python3 -m http.server 8000
 A plain `open index.html` mostly works too, but the `file://` protocol
 can be fussy about the logo path — the local server is more faithful.
 
+## CSS design system
+
+All visual rules live in `styles.css`; page markup should not contain inline
+presentation styles. Reuse these components before adding section-specific CSS:
+
+- `.wrap` sets the single site-wide content edge and responsive gutter.
+- `.sec` supplies the shared vertical rhythm for every major section.
+- `.section-header` and `.section-header--split` control headings and intro copy.
+- `.panel`, `.accent-panel`, and the `.accent-*` modifiers build bordered cards.
+- `--column-gap`, `--grid-gap`, and `--panel-pad` are the shared spacing tokens.
+
+The primary layout breakpoint is `1080px`; smaller component breakpoints only
+change card counts or gallery behavior. When changing `styles.css`, bump the
+version query on its links in `index.html` and `404.html` so the preview cannot
+serve an older cached layout.
+
 ## Deploy (GitHub Pages)
 
 The preview is published from the repository root on the `main` branch.
