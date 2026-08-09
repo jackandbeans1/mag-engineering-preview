@@ -198,8 +198,7 @@ p{margin:0 0 1rem}
 .area-section .section-header{align-items:start;margin-bottom:0}
 .area-section .section-kicker{color:rgba(255,255,255,.62)}
 .area-heading h2{max-width:16ch}
-.area-details>.section-header__copy{max-width:54ch;color:rgba(255,255,255,.72)}
-.area-groups{display:grid;gap:1.75rem;margin-top:1.5rem}
+.area-groups{display:grid;gap:1.75rem}
 .area-group__title{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-bottom:.65rem;border-bottom:1px solid rgba(255,255,255,.35);color:#fff}
 .area-group__title span{flex:none;font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.62)}
 .area{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:.65rem}
