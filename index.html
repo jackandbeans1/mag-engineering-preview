@@ -125,14 +125,21 @@ p{margin:0 0 1rem}
 
 /* ── Stats: italic numerals echoing the wordmark's slant ── */
 .creds{border-bottom:var(--keyline);background:var(--paper-2)}
-.creds-in{display:flex;flex-wrap:wrap}
-.cred{flex:1 1 190px;padding:1.5rem 1.5rem 1.5rem 0;border-right:1px solid var(--hairline)}
+.creds-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.cred{min-width:0;padding:1.5rem clamp(1.25rem,2vw,2rem);border-right:1px solid var(--hairline)}
+.cred:first-child{padding-left:0}
 .cred:last-child{border-right:0}
 .cred b{display:block;font-family:var(--display);font-style:italic;font-size:2.4rem;line-height:1;font-weight:700}
 .cred:nth-child(odd) b{color:var(--red)}
 .cred:nth-child(even) b{color:var(--blue)}
 .cred small{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-@media(max-width:720px){.cred{flex:1 1 50%;border-right:0;padding-right:1rem}}
+@media(max-width:720px){
+  .creds-in{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cred{padding:1.25rem;border-right:1px solid var(--hairline)}
+  .cred:nth-child(odd){padding-left:0}
+  .cred:nth-child(even){padding-right:0;border-right:0}
+  .cred:nth-child(n+3){border-top:1px solid var(--hairline)}
+}
 
 .sec{padding-block:clamp(3.25rem,6vw,5.5rem)}
 .sec-head{max-width:60ch;margin-bottom:clamp(2.25rem,4vw,3rem)}
