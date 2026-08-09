@@ -85,7 +85,7 @@ p{margin:0 0 1rem}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:grayscale(.4) contrast(1.08)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.7))}
 .hero-in{position:relative;z-index:2;padding-block:clamp(2.5rem,5vw,4rem)}
-.badge{background:var(--paper);border:var(--keyline-lg);padding:clamp(1.5rem,3.5vw,2.5rem);max-width:64rem}
+.badge{background:var(--paper);border:var(--keyline-lg);padding:clamp(1.5rem,3.5vw,2.5rem);max-width:52rem}
 .badge h1{max-width:none;text-wrap:balance}
 .badge h1 .r{color:var(--red)}
 .badge h1 .b{color:var(--blue)}
