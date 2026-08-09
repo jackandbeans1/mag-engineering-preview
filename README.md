@@ -9,7 +9,8 @@ Replaces the WordPress site at `645739.us26.myftpupload.com`.
 ## Structure
 
 ```
-index.html                    the whole site
+index.html                    page structure and behavior
+styles.css                    site-wide design system and responsive styles
 assets/mag-logo.png           the logo
 assets/img/                   job photos (populate via the script below)
 _headers                      Cloudflare Pages — noindex while previewing
