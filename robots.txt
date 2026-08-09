@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /
+
+# Preview only — DELETE THIS FILE BEFORE LAUNCH.
+# At launch, replace with:
+#   User-agent: *
+#   Allow: /
+#   Sitemap: https://YOURDOMAIN/sitemap.xml

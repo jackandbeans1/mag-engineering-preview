@@ -1,0 +1,14 @@
+/ 
+  X-Robots-Tag: noindex, nofollow
+
+/*
+  X-Robots-Tag: noindex, nofollow
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# ─────────────────────────────────────────────────────────────
+# DELETE THIS FILE BEFORE LAUNCH.
+# While it exists, every page is invisible to Google — which is
+# what you want for a preview link, and exactly what you don't
+# want once the real domain is pointed here.
+# ─────────────────────────────────────────────────────────────

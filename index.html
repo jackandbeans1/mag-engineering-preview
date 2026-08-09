@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAG Engineering Inc — Underground Utilities &amp; Excavation | Fallbrook, CA</title>
+<meta name="description" content="MAG Engineering Inc installs water, sewer, storm drain, septic, gas and electric service in Fallbrook and North San Diego County. Operated excavator and skid steer rental. Family owned, 20+ years.">
+<link rel="icon" href="assets/mag-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "MAG Engineering Inc",
+  "description": "General engineering contractor specializing in underground wet and dry utilities, excavation, septic systems and storm drainage.",
+  "logo": "assets/mag-logo.png",
+  "telephone": "+1-760-792-9502",
+  "email": "bill@maginc.ai",
+  "address": {
+    "@type": "PostalAddress",
+    "postOfficeBoxNumber": "1558",
+    "addressLocality": "Fallbrook",
+    "addressRegion": "CA",
+    "postalCode": "92088",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Fallbrook","Bonsall","Rainbow","De Luz","Temecula","Murrieta","Vista","Oceanside","San Marcos","Valley Center","Escondido"]
+}
+</script>
+
+<style>
+:root{
+  /* ══════════════════════════════════════════════════════════════
+     BRAND — sampled directly from logo.png
+     Red   #980000 → #FF0000   (core #C40000)
+     Blue  #000FD6 → #2CA2FD   (core #0D3EE3)
+     Plus the logo's pure black keyline and white field.
+     ══════════════════════════════════════════════════════════════ */
+  --red:        #C40000;
+  --red-deep:   #980000;
+  --red-hot:    #FF0000;
+  --blue:       #0D3EE3;
+  --blue-deep:  #0A1F7A;
+  --blue-sky:   #2CA2FD;
+
+  --black:      #000000;
+  --paper:      #FFFFFF;
+  --paper-2:    #F1F1EE;
+  --ink:        #000000;
+  --ink-soft:   #55595E;
+  --hairline:   #D6D6D1;
+
+  /* The logo is a black-keyline badge. That rule is the whole system. */
+  --keyline:    3px solid var(--black);
+  --keyline-lg: 5px solid var(--black);
+
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body:    "Archivo", system-ui, sans-serif;
+  --mono:    "IBM Plex Mono", ui-monospace, monospace;
+
+  --pad: clamp(1.15rem, 5vw, 4.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:var(--pad)}
+
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.94;letter-spacing:-.005em;margin:0;text-transform:uppercase}
+h1{font-size:clamp(2.5rem,7vw,5.6rem)}
+h2{font-size:clamp(1.9rem,4.4vw,3.4rem)}
+h3{font-size:clamp(1.2rem,2vw,1.55rem);letter-spacing:.01em}
+p{margin:0 0 1rem}
+.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 1rem}
+
+/* ── Header: white field, heavy black rule — the logo's own frame ── */
+.hdr{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:var(--keyline-lg)}
+.hdr-in{display:flex;align-items:center;gap:1.5rem;height:76px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:52px;width:auto}
+.brand-text{font-family:var(--display);font-weight:700;font-size:1.6rem;text-transform:uppercase;white-space:nowrap}
+.nav{margin-left:auto;display:flex;gap:1.5rem}
+.nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);padding-block:.35rem;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.nav a:hover{color:var(--black);border-bottom-color:var(--red)}
+.call{display:inline-flex;align-items:center;background:var(--red);color:#fff;text-decoration:none;font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:.02em;padding:.55rem 1.15rem;border:var(--keyline);white-space:nowrap;transition:background .15s}
+.call:hover{background:var(--red-deep)}
+@media(max-width:960px){.nav{display:none}.call{margin-left:auto}.brand img{height:42px}.hdr-in{height:64px}}
+
+/* ── Hero: photography under a white badge, mirroring the logo ── */
+.hero{position:relative;background:var(--black);overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;filter:grayscale(.4) contrast(1.08)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.7))}
+.hero-in{position:relative;z-index:2;padding-block:clamp(3rem,8vw,6rem)}
+.badge{background:var(--paper);border:var(--keyline-lg);padding:clamp(1.5rem,4vw,3rem);max-width:58rem}
+.badge h1{max-width:15ch}
+.badge h1 .r{color:var(--red)}
+.badge h1 .b{color:var(--blue)}
+.hero-sub{max-width:50ch;margin-top:1.4rem;font-size:1.08rem;color:var(--ink-soft)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;padding:.65rem 1.5rem;border:var(--keyline);transition:background .15s,color .15s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-deep)}
+.btn-out{background:var(--paper);color:var(--black)}
+.btn-out:hover{background:var(--black);color:#fff}
+
+/* ── Stats: italic numerals echoing the wordmark's slant ── */
+.creds{border-bottom:var(--keyline);background:var(--paper-2)}
+.creds-in{display:flex;flex-wrap:wrap}
+.cred{flex:1 1 190px;padding:1.5rem 1.5rem 1.5rem 0;border-right:1px solid var(--hairline)}
+.cred:last-child{border-right:0}
+.cred b{display:block;font-family:var(--display);font-style:italic;font-size:2.4rem;line-height:1;font-weight:700}
+.cred:nth-child(odd) b{color:var(--red)}
+.cred:nth-child(even) b{color:var(--blue)}
+.cred small{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+@media(max-width:720px){.cred{flex:1 1 50%;border-right:0;padding-right:1rem}}
+
+.sec{padding-block:clamp(3.25rem,7vw,6rem)}
+.sec-head{max-width:60ch;margin-bottom:2.75rem}
+.sec-head p{color:var(--ink-soft);font-size:1.06rem;margin-top:1rem}
+
+/* ── Wet/dry axis: the logo's red-to-blue gradient, made literal ── */
+.axis{display:flex;align-items:stretch;border:var(--keyline);margin-bottom:2.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase}
+.axis div{flex:1;padding:.7rem 1rem;color:#fff;display:flex;align-items:center;gap:.6rem}
+.axis .dry{background:linear-gradient(90deg,var(--red-deep),var(--red))}
+.axis .wet{background:linear-gradient(90deg,var(--blue),var(--blue-deep));justify-content:flex-end;text-align:right}
+
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:1.25rem}
+.svc{background:var(--paper);border:var(--keyline);padding:1.6rem 1.4rem 1.8rem;border-top:10px solid var(--c)}
+.svc .tag{font-family:var(--mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c);font-weight:500;margin:0 0 .35rem}
+.svc ul{list-style:none;margin:1.15rem 0 0;padding:0}
+.svc li{padding:.55rem 0 .55rem 1.35rem;border-top:1px solid var(--hairline);position:relative;font-size:.95rem}
+.svc li::before{content:"";position:absolute;left:0;top:1.05rem;width:7px;height:7px;background:var(--c)}
+
+/* ── Equipment band ── */
+.band{background:var(--black);color:#fff;border-block:var(--keyline-lg)}
+.band .sec-head p{color:rgba(255,255,255,.7)}
+.band .eyebrow{color:rgba(255,255,255,.55)}
+.rent{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+.rent ul{list-style:none;margin:0;padding:0}
+.rent li{padding:.75rem 0;border-top:1px solid rgba(255,255,255,.2);display:flex;gap:1rem;align-items:baseline}
+.rent li b{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--blue-sky);flex:0 0 2rem}
+.rent-media{display:grid;gap:1.25rem}
+.rent-media img{aspect-ratio:16/10;object-fit:cover;border:var(--keyline);outline:1px solid rgba(255,255,255,.25)}
+@media(max-width:880px){.rent{grid-template-columns:1fr}}
+
+.who{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.75rem}
+.who div{border-top:8px solid var(--c);padding-top:1.15rem}
+.who h3{margin-bottom:.55rem}
+.who p{color:var(--ink-soft);font-size:.97rem;margin:0}
+
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.shots a{display:block;overflow:hidden;border:var(--keyline);background:var(--black)}
+.shots img{aspect-ratio:4/3;object-fit:cover;transition:transform .4s ease,filter .4s ease;filter:grayscale(.2)}
+.shots a:hover img{transform:scale(1.05);filter:grayscale(0)}
+
+.area{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.area span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--black);padding:.4rem .8rem;background:var(--paper-2)}
+
+/* ── Contact ── */
+.contact{background:var(--paper-2);border-top:var(--keyline-lg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.big-phone{font-family:var(--display);font-weight:700;font-size:clamp(2.3rem,6vw,4rem);line-height:1;text-decoration:none;color:var(--red);display:inline-block;margin-block:.4rem 1.4rem}
+.big-phone:hover{color:var(--red-deep)}
+.det{border-top:1px solid var(--hairline);padding:.85rem 0;display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;align-items:baseline}
+.det b{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+form{display:grid;gap:.85rem;background:var(--paper);border:var(--keyline);padding:1.5rem}
+label{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:.3rem}
+input,textarea,select{width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--black);padding:.65rem .8rem}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue)}
+textarea{min-height:110px;resize:vertical}
+button{font-family:var(--display);font-weight:700;font-size:1.3rem;text-transform:uppercase;letter-spacing:.02em;background:var(--red);color:#fff;border:var(--keyline);padding:.7rem 1.5rem;cursor:pointer;justify-self:start}
+button:hover{background:var(--red-deep)}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr}}
+
+.ftr{background:var(--black);color:rgba(255,255,255,.62);font-family:var(--mono);font-size:.72rem;letter-spacing:.05em}
+.ftr-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;padding-block:1.75rem}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.shots img{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top">
+      <img src="assets/mag-logo.png" alt="MAG Engineering Inc"
+           onload="this.nextElementSibling.hidden=true" onerror="this.remove()">
+      <span class="brand-text">MAG Engineering Inc</span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#work">Work</a>
+      <a href="#area">Service Area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call" href="tel:+17607929502">(760) 792-9502</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+<img src="assets/img/slide-1-1.jpg" alt="MAG Engineering crew installing underground utilities in a coned-off street.">
+  <div class="wrap hero-in">
+    <div class="badge">
+      <p class="eyebrow">Fallbrook, California &nbsp;·&nbsp; CSLB Lic. #[LICENSE NUMBER] &nbsp;·&nbsp; Family owned</p>
+      <h1>Everything that goes <span class="r">in the ground</span> before the <span class="b">concrete</span> does.</h1>
+      <p class="hero-sub">Wet and dry underground utilities, excavation, septic and storm drainage across North San Diego County. Twenty years on our own trucks, forty-five in the trade.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:+17607929502">Call (760) 792-9502</a>
+        <a class="btn btn-out" href="#contact">Request a bid</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="creds">
+  <div class="wrap creds-in">
+    <div class="cred"><b>20+</b><small>Years as MAG</small></div>
+    <div class="cred"><b>45</b><small>Years in the trade</small></div>
+    <div class="cred"><b>2</b><small>Utilities: SDG&amp;E &amp; SCE</small></div>
+    <div class="cred"><b>1</b><small>Owner on every job</small></div>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Scope of work</p>
+      <h2>Wet, dry, and everything between</h2>
+      <p>The trade splits underground work into wet utilities and dry utilities. We do both, plus the earthwork on either side — so one crew opens the trench, makes the tie-in, and closes it back up to grade.</p>
+    </div>
+
+    <div class="axis rv" aria-hidden="true">
+      <div class="dry">Dry &nbsp;·&nbsp; Electric &amp; Gas</div>
+      <div class="wet">Water, Sewer &amp; Storm &nbsp;·&nbsp; Wet</div>
+    </div>
+
+    <div class="svc-grid rv">
+      <div class="svc" style="--c:var(--blue)">
+        <p class="tag">Wet utilities</p>
+        <h3>Water &amp; Fire Service</h3>
+        <ul>
+          <li>Domestic water tie-ins and on-site installation</li>
+          <li>Fire water tie-ins and on-site installation</li>
+          <li>Backflow and meter assemblies</li>
+          <li>Pressure testing and agency sign-off</li>
+        </ul>
+      </div>
+      <div class="svc" style="--c:var(--blue-deep)">
+        <p class="tag">Wet utilities</p>
+        <h3>Sewer, Septic &amp; Storm</h3>
+        <ul>
+          <li>Sewer tie-ins and on-site installation</li>
+          <li>Septic system installation</li>
+          <li>Storm drain systems</li>
+          <li>Bio-retention and detention systems</li>
+          <li>Grease and sand interceptors</li>
+        </ul>
+      </div>
+      <div class="svc" style="--c:var(--red)">
+        <p class="tag">Dry utilities</p>
+        <h3>Electrical Service</h3>
+        <ul>
+          <li>SDG&amp;E primary electrical installation</li>
+          <li>Southern California Edison service installation</li>
+          <li>Conduit, substructure and vaults</li>
+        </ul>
+      </div>
+      <div class="svc" style="--c:var(--red-deep)">
+        <p class="tag">Dry utilities</p>
+        <h3>Gas Service</h3>
+        <ul>
+          <li>SDG&amp;E gas service installation</li>
+          <li>Trench, bed and backfill to utility spec</li>
+          <li>Joint trench coordination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec band" id="equipment">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Earthwork &amp; operated rental</p>
+      <h2>Machine and operator, by the day</h2>
+      <p>Plumbers, electricians, concrete contractors and homeowners hire us when the hole needs to be dug right and nobody on their crew wants to run the machine. You get the equipment and the person who knows how to use it.</p>
+    </div>
+    <div class="rent">
+      <div class="rv">
+        <ul>
+          <li><b>01</b> Operated excavator rental — trenching, footings, site prep</li>
+          <li><b>02</b> Operated skid steer and Bobcat service — tight-access grading</li>
+          <li><b>03</b> Mini excavator service for residential lots and side yards</li>
+          <li><b>04</b> Structural backfill of retaining walls, compacted in lifts</li>
+          <li><b>05</b> Excavation and backfill for other trades</li>
+          <li><b>06</b> Demolition and haul-off</li>
+        </ul>
+      </div>
+      <div class="rent-media rv">
+<img src="assets/img/EQUIOPMENT-2-9d259fa-1.png" alt="Aerial view of a construction site with a bulldozer moving material.">
+<img src="assets/img/ENGINEERING-15-12de68e-1.jpg" alt="Excavator working on a dirt road in front of a house.">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Who we work for</p>
+      <h2>Three kinds of calls</h2>
+    </div>
+    <div class="who rv">
+      <div style="--c:var(--red)">
+        <h3>Homeowners</h3>
+        <p>Failing septic, a new water or sewer lateral, a driveway that needs to come out, power run to a barn or ADU. We walk the property and tell you what it actually takes.</p>
+      </div>
+      <div style="--c:var(--black)">
+        <h3>Trade contractors</h3>
+        <p>You have the license and the scope, you just need the trench, the machine, or the backfill. We show up with an operator and stay out of your schedule's way.</p>
+      </div>
+      <div style="--c:var(--blue)">
+        <h3>General contractors</h3>
+        <p>Public works and upscale residential from the ground down — joint trench, utility coordination, storm drainage, and structural backfill signed off and ready for concrete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="eyebrow">On the job</p><h2>Recent work</h2></div>
+    <div class="shots rv">
+<a href="#contact"><img src="assets/img/WET-8-e3ce1ab-1.jpg" alt="Sewer pipe set in an open trench."></a>
+<a href="#contact"><img src="assets/img/DRY-4-881adde-1.jpg" alt="Yellow gas line being installed in an open trench."></a>
+<a href="#contact"><img src="assets/img/WET-1-848fb1f-1.jpg" alt="Crew working inside a shored trench."></a>
+<a href="#contact"><img src="assets/img/ENGINEERING-1-9e0a542-1.jpg" alt="Excavator digging up a residential driveway."></a>
+<a href="#contact"><img src="assets/img/slide-2.jpg" alt="Crew working on a parking lot."></a>
+<a href="#contact"><img src="assets/img/ENGINEERING-3-e918975-1.jpg" alt="Gravel driveway being laid out in front of a house."></a>
+<a href="#contact"><img src="assets/img/WET-5-988fafd-1.jpg" alt="Worker connecting pipe at a construction site."></a>
+<a href="#contact"><img src="assets/img/slide-4.jpg" alt="Concrete driveway being laid in front of a house."></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="area" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:0">
+      <p class="eyebrow">Service area</p>
+      <h2>North San Diego County &amp; South Riverside</h2>
+      <p>Based in Fallbrook, working the corridor between the 15 and the coast.</p>
+      <div class="area">
+        <span>Fallbrook</span><span>Bonsall</span><span>Rainbow</span><span>De Luz</span>
+        <span>Temecula</span><span>Murrieta</span><span>Vista</span><span>Oceanside</span>
+        <span>San Marcos</span><span>Valley Center</span><span>Escondido</span><span>Pala</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <p class="eyebrow">Get a bid</p>
+      <h2>Tell us what's in the ground</h2>
+      <a class="big-phone" href="tel:+17607929502">(760)&nbsp;792-9502</a>
+      <div class="det"><b>Email</b><span><a href="mailto:bill@maginc.ai">bill@maginc.ai</a></span></div>
+      <div class="det"><b>Mail</b><span>P.O. Box 1558<br>Fallbrook, CA 92088</span></div>
+      <div class="det"><b>Hours</b><span>[CONFIRM HOURS]</span></div>
+      <div class="det"><b>License</b><span>CSLB #[LICENSE NUMBER]</span></div>
+    </div>
+    <div class="rv">
+      <form action="#" method="post">
+        <div><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+        <div><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="f-type">What do you need?</label>
+          <select id="f-type" name="type">
+            <option>Water or fire service</option>
+            <option>Sewer or septic</option>
+            <option>Storm drain or detention</option>
+            <option>Gas or electric service</option>
+            <option>Operated equipment rental</option>
+            <option>Excavation, backfill or demolition</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div><label for="f-msg">Job address and details</label><textarea id="f-msg" name="message"></textarea></div>
+        <button type="submit">Send request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <span>© <span id="yr">2026</span> MAG Engineering Inc · Fallbrook, CA</span>
+    <span>CSLB Lic. #[LICENSE NUMBER] · <a href="tel:+17607929502">(760) 792-9502</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+} else {
+  document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+}
+</script>
+</body>
+</html>
