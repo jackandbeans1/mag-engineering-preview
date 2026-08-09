@@ -28,23 +28,23 @@ python3 -m http.server 8000
 A plain `open index.html` mostly works too, but the `file://` protocol
 can be fussy about the logo path — the local server is more faithful.
 
-## Deploy (Cloudflare Pages)
+## Deploy (GitHub Pages)
 
-Connect this repo in **Cloudflare → Workers & Pages → Create → Pages →
-Connect to Git**. There is no build command and no build output
-directory — leave both blank, framework preset "None". Every push to
-`main` redeploys, and each one gets its own preview URL.
+The preview is published from the repository root on the `main` branch.
+Every push to `main` triggers a new deployment at
+`https://mag-preview.allcardcomps.com/`. The `CNAME` file and matching
+Cloudflare DNS record connect that temporary subdomain to GitHub Pages.
 
 ## Before this goes live
 
-**Delete `_headers` and `robots.txt`.** Both exist to keep the preview
-out of Google. If they survive to launch, the new site inherits exactly
-the problem the old one has — the GoDaddy site is currently tagged
-`noindex, nofollow`, which is a large part of why it gets no traffic.
+**Delete `_headers` and `robots.txt`, and remove the robots meta tag from
+`index.html` and `404.html`.** These keep the preview out of Google. If
+they survive to launch, the new site inherits exactly the problem the
+old one has — the GoDaddy site is currently tagged `noindex, nofollow`,
+which is a large part of why it gets no traffic.
 
-**Run `bash scripts/localize-images.sh`.** The photos are hot-linked
-from the old staging site until you do. When that site goes away, so do
-they.
+The job photos have already been copied into `assets/img/`; the helper
+script remains in `scripts/` for reference.
 
 ## Content still needed from the owner
 
