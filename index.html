@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="robots" content="noindex, nofollow">
 <title>MAG Engineering Inc — Underground Utilities &amp; Excavation | Fallbrook, CA</title>
 <meta name="description" content="MAG Engineering Inc installs water, sewer, storm drain, septic, gas and electric service throughout San Diego County and Riverside County. Operated excavator and skid steer rental. Family owned, 20+ years.">
@@ -32,7 +35,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="styles.css?v=20260809-3">
+<link rel="stylesheet" href="styles.css?v=20260809-5">
 </head>
 <body>
 
@@ -83,8 +86,8 @@
   <div class="wrap">
     <div class="section-header section-header--split rv">
       <div>
-        <p class="eyebrow">Scope of work</p>
-        <h2>Wet, dry, and everything between</h2>
+        <p class="section-kicker">Scope of work</p>
+        <h2 class="section-title">Wet, dry, and everything between</h2>
       </div>
       <p class="section-header__copy">The trade splits underground work into wet utilities and dry utilities. We do both, plus the earthwork on either side — so one crew opens the trench, makes the tie-in, and closes it back up to grade.</p>
     </div>
@@ -142,8 +145,8 @@
   <div class="wrap">
     <div class="section-header section-header--split rv">
       <div>
-        <p class="eyebrow">Earthwork &amp; operated rental</p>
-        <h2>Machine and operator, by the day</h2>
+        <p class="section-kicker">Earthwork &amp; operated rental</p>
+        <h2 class="section-title">Machine and operator, by the day</h2>
       </div>
       <p class="section-header__copy">Plumbers, electricians, concrete contractors and homeowners hire us when the hole needs to be dug right and nobody on their crew wants to run the machine. You get the equipment and the person who knows how to use it.</p>
     </div>
@@ -177,8 +180,8 @@
   <div class="wrap">
     <div class="section-header section-header--split rv">
       <div>
-        <p class="eyebrow">Who we work for</p>
-        <h2>Three kinds of calls</h2>
+        <p class="section-kicker">Who we work for</p>
+        <h2 class="section-title">Three kinds of calls</h2>
       </div>
       <p class="section-header__copy">Direct help for property owners, extra capability for licensed trades, and complete underground scope for general contractors.</p>
     </div>
@@ -202,7 +205,7 @@
 <section class="sec work-section" id="work">
   <div class="wrap">
     <div class="section-header section-header--split rv">
-      <div><p class="eyebrow">On the job</p><h2>Recent work</h2></div>
+      <div><p class="section-kicker">On the job</p><h2 class="section-title">Recent work</h2></div>
       <p class="section-header__copy">Browse selected utility, excavation, and site work. Choose a thumbnail to move through the gallery, or open the main photo to view it full size.</p>
     </div>
     <div class="carousel rv" data-gallery role="region" aria-label="Recent work photo gallery" tabindex="0">
@@ -235,11 +238,11 @@
   <div class="wrap">
     <div class="section-header section-header--split rv">
       <div class="area-heading">
-        <p class="eyebrow">Service area</p>
-        <h2>San Diego County &amp; Riverside County</h2>
+        <p class="section-kicker">Service area</p>
+        <h2 class="section-title">San Diego County &amp; Riverside County</h2>
       </div>
       <div class="area-details">
-        <p>Based in Fallbrook, serving projects throughout San Diego County and Riverside County.</p>
+        <p class="section-header__copy">Based in Fallbrook, serving projects throughout San Diego County and Riverside County.</p>
         <div class="area">
           <span>Fallbrook</span><span>Bonsall</span><span>Rainbow</span><span>De Luz</span>
           <span>Temecula</span><span>Murrieta</span><span>Vista</span><span>Oceanside</span>
@@ -253,8 +256,8 @@
 <section class="sec contact" id="contact">
   <div class="wrap contact-grid">
     <div class="rv">
-      <p class="eyebrow">Get a bid</p>
-      <h2>Tell us what's in the ground</h2>
+      <p class="section-kicker">Get a bid</p>
+      <h2 class="section-title">Tell us what's in the ground</h2>
       <a class="big-phone" href="tel:+17607929502">(760)&nbsp;792-9502</a>
       <div class="det"><b>Email</b><span><a href="mailto:bill@maginc.ai">bill@maginc.ai</a></span></div>
       <div class="det"><b>Mail</b><span>P.O. Box 1558<br>Fallbrook, CA 92088</span></div>
@@ -310,17 +313,8 @@ if (header && menuToggle && primaryNav) {
     if (event.key === 'Escape') setMenu(false);
   });
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 960) setMenu(false);
+    if (window.innerWidth > 1080) setMenu(false);
   });
-}
-
-if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const io = new IntersectionObserver((es) => {
-    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
-} else {
-  document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
 }
 
 const gallery = document.querySelector('[data-gallery]');
