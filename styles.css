@@ -89,7 +89,6 @@ p{margin:0 0 1rem}
 .badge h1{max-width:18ch}
 .badge h1 .r{color:var(--red)}
 .badge h1 .b{color:var(--blue)}
-.hero-sub{max-width:50ch;margin-top:1.4rem;font-size:1.08rem;color:var(--ink-soft)}
 .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
 .btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;padding:.65rem 1.5rem;border:var(--keyline);transition:background .15s,color .15s}
 .btn-red{background:var(--red);color:#fff}
