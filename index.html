@@ -156,10 +156,23 @@ p{margin:0 0 1rem}
 .who h3{margin-bottom:.55rem}
 .who p{color:var(--ink-soft);font-size:.97rem;margin:0}
 
-.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
-.shots a{display:block;overflow:hidden;border:var(--keyline);background:var(--black);cursor:zoom-in}
-.shots img{aspect-ratio:4/3;object-fit:cover;transition:transform .4s ease,filter .4s ease;filter:grayscale(.2)}
-.shots a:hover img{transform:scale(1.05);filter:grayscale(0)}
+.carousel{max-width:980px}
+.carousel-stage{position:relative;background:var(--black);border:var(--keyline-lg);overflow:hidden}
+.carousel-photo{display:block;cursor:zoom-in}
+.carousel-photo img{width:100%;aspect-ratio:16/9;object-fit:contain;transition:opacity .18s ease}
+.carousel-btn{position:absolute;top:50%;translate:0 -50%;z-index:2;width:3.25rem;height:3.25rem;padding:0;display:grid;place-items:center;background:var(--black);color:#fff;border:3px solid #fff;font-size:2rem;line-height:1}
+.carousel-btn:hover{background:var(--red)}
+.carousel-prev{left:1rem}
+.carousel-next{right:1rem}
+.carousel-meta{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:.85rem 0 .4rem;border-bottom:1px solid var(--hairline)}
+.carousel-caption{margin:0;color:var(--ink-soft);font-size:.92rem}
+.carousel-count{flex:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.carousel-thumbs{display:flex;gap:.65rem;overflow-x:auto;padding:.8rem 0 .35rem;scroll-snap-type:x proximity;scrollbar-color:var(--black) var(--paper-2)}
+.carousel-thumb{flex:0 0 116px;padding:0;background:var(--black);border:3px solid transparent;opacity:.58;scroll-snap-align:start;transition:opacity .15s,border-color .15s}
+.carousel-thumb:hover{background:var(--black);opacity:1}
+.carousel-thumb[aria-selected="true"]{border-color:var(--red);opacity:1}
+.carousel-thumb img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:640px){.carousel-photo img{aspect-ratio:4/3}.carousel-btn{width:2.75rem;height:2.75rem;font-size:1.7rem}.carousel-prev{left:.5rem}.carousel-next{right:.5rem}.carousel-thumb{flex-basis:88px}.carousel-meta{align-items:flex-start}.carousel-caption{font-size:.82rem}}
 
 .area{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
 .area span{font-family:var(--mono);font-size:.76rem;border:1px solid var(--black);padding:.4rem .8rem;background:var(--paper-2)}
@@ -185,7 +198,7 @@ button:hover{background:var(--red-deep)}
 
 .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
 .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.shots img{transition:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.carousel-photo img,.carousel-thumb{transition:none}}
 </style>
 </head>
 <body>
@@ -341,15 +354,28 @@ button:hover{background:var(--red-deep)}
 <section class="sec" id="work" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv"><p class="eyebrow">On the job</p><h2>Recent work</h2></div>
-    <div class="shots rv">
-<a href="assets/img/WET-8-e3ce1ab-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size sewer trench photo"><img src="assets/img/WET-8-e3ce1ab-1.jpg" alt="Sewer pipe set in an open trench."></a>
-<a href="assets/img/DRY-4-881adde-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size gas-line photo"><img src="assets/img/DRY-4-881adde-1.jpg" alt="Yellow gas line being installed in an open trench."></a>
-<a href="assets/img/WET-1-848fb1f-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size shored-trench photo"><img src="assets/img/WET-1-848fb1f-1.jpg" alt="Crew working inside a shored trench."></a>
-<a href="assets/img/ENGINEERING-1-9e0a542-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size driveway excavation photo"><img src="assets/img/ENGINEERING-1-9e0a542-1.jpg" alt="Excavator digging up a residential driveway."></a>
-<a href="assets/img/slide-2.jpg" target="_blank" rel="noopener" aria-label="Open full-size parking-lot photo"><img src="assets/img/slide-2.jpg" alt="Crew working on a parking lot."></a>
-<a href="assets/img/ENGINEERING-3-e918975-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size gravel-driveway photo"><img src="assets/img/ENGINEERING-3-e918975-1.jpg" alt="Gravel driveway being laid out in front of a house."></a>
-<a href="assets/img/WET-5-988fafd-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size pipe-connection photo"><img src="assets/img/WET-5-988fafd-1.jpg" alt="Worker connecting pipe at a construction site."></a>
-<a href="assets/img/slide-4.jpg" target="_blank" rel="noopener" aria-label="Open full-size concrete-driveway photo"><img src="assets/img/slide-4.jpg" alt="Concrete driveway being laid in front of a house."></a>
+    <div class="carousel rv" data-gallery role="region" aria-label="Recent work photo gallery" tabindex="0">
+      <div class="carousel-stage">
+        <a class="carousel-photo" href="assets/img/WET-8-e3ce1ab-1.jpg" target="_blank" rel="noopener" aria-label="Open full-size image: Sewer pipe set in an open trench.">
+          <img src="assets/img/WET-8-e3ce1ab-1.jpg" alt="Sewer pipe set in an open trench.">
+        </a>
+        <button class="carousel-btn carousel-prev" type="button" aria-label="Previous photo">&#8249;</button>
+        <button class="carousel-btn carousel-next" type="button" aria-label="Next photo">&#8250;</button>
+      </div>
+      <div class="carousel-meta">
+        <p class="carousel-caption">Sewer pipe set in an open trench.</p>
+        <span class="carousel-count" aria-live="polite">1 / 8</span>
+      </div>
+      <div class="carousel-thumbs" role="tablist" aria-label="Choose a recent work photo">
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="true" aria-label="Show photo 1: Sewer pipe set in an open trench" data-src="assets/img/WET-8-e3ce1ab-1.jpg" data-alt="Sewer pipe set in an open trench."><img src="assets/img/WET-8-e3ce1ab-1.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 2: Yellow gas line in an open trench" data-src="assets/img/DRY-4-881adde-1.jpg" data-alt="Yellow gas line being installed in an open trench."><img src="assets/img/DRY-4-881adde-1.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 3: Crew inside a shored trench" data-src="assets/img/WET-1-848fb1f-1.jpg" data-alt="Crew working inside a shored trench."><img src="assets/img/WET-1-848fb1f-1.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 4: Residential driveway excavation" data-src="assets/img/ENGINEERING-1-9e0a542-1.jpg" data-alt="Excavator digging up a residential driveway."><img src="assets/img/ENGINEERING-1-9e0a542-1.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 5: Crew working on a parking lot" data-src="assets/img/slide-2.jpg" data-alt="Crew working on a parking lot."><img src="assets/img/slide-2.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 6: Gravel driveway construction" data-src="assets/img/ENGINEERING-3-e918975-1.jpg" data-alt="Gravel driveway being laid out in front of a house."><img src="assets/img/ENGINEERING-3-e918975-1.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 7: Worker connecting pipe" data-src="assets/img/WET-5-988fafd-1.jpg" data-alt="Worker connecting pipe at a construction site."><img src="assets/img/WET-5-988fafd-1.jpg" alt=""></button>
+        <button class="carousel-thumb" type="button" role="tab" aria-selected="false" aria-label="Show photo 8: Concrete driveway installation" data-src="assets/img/slide-4.jpg" data-alt="Concrete driveway being laid in front of a house."><img src="assets/img/slide-4.jpg" alt=""></button>
+      </div>
     </div>
   </div>
 </section>
@@ -419,6 +445,50 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 } else {
   document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+}
+
+const gallery = document.querySelector('[data-gallery]');
+if (gallery) {
+  const stage = gallery.querySelector('.carousel-stage');
+  const photoLink = gallery.querySelector('.carousel-photo');
+  const photo = photoLink.querySelector('img');
+  const caption = gallery.querySelector('.carousel-caption');
+  const count = gallery.querySelector('.carousel-count');
+  const thumbs = [...gallery.querySelectorAll('.carousel-thumb')];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let current = 0;
+
+  const showPhoto = (index, moveThumb = true) => {
+    current = (index + thumbs.length) % thumbs.length;
+    const selected = thumbs[current];
+    const src = selected.dataset.src;
+    const alt = selected.dataset.alt;
+    photo.src = src;
+    photo.alt = alt;
+    photoLink.href = src;
+    photoLink.setAttribute('aria-label', `Open full-size image: ${alt}`);
+    caption.textContent = alt;
+    count.textContent = `${current + 1} / ${thumbs.length}`;
+    thumbs.forEach((thumb, i) => thumb.setAttribute('aria-selected', String(i === current)));
+    if (moveThumb) selected.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+  };
+
+  gallery.querySelector('.carousel-prev').addEventListener('click', () => showPhoto(current - 1));
+  gallery.querySelector('.carousel-next').addEventListener('click', () => showPhoto(current + 1));
+  thumbs.forEach((thumb, index) => thumb.addEventListener('click', () => showPhoto(index)));
+  gallery.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(current - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); showPhoto(current + 1); }
+  });
+  let touchStartX = 0;
+  stage.addEventListener('touchstart', (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+  stage.addEventListener('touchend', (event) => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) > 50) {
+      event.preventDefault();
+      showPhoto(current + (distance < 0 ? 1 : -1));
+    }
+  });
 }
 </script>
 </body>
