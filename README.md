@@ -13,8 +13,8 @@ index.html                    page structure and behavior
 styles.css                    site-wide design system and responsive styles
 assets/mag-logo.png           the logo
 assets/img/                   job photos (populate via the script below)
-_headers                      Cloudflare Pages — noindex while previewing
-robots.txt                    same purpose, for crawlers that read it
+_headers                      optional noindex header for supporting hosts
+robots.txt                    permits crawling so the HTML noindex can be read
 404.html
 scripts/localize-images.sh    pulls photos off the old GoDaddy site
 ```
@@ -54,11 +54,19 @@ Cloudflare DNS record connect that temporary subdomain to GitHub Pages.
 
 ## Before this goes live
 
-**Delete `_headers` and `robots.txt`, and remove the robots meta tag from
-`index.html` and `404.html`.** These keep the preview out of Google. If
-they survive to launch, the new site inherits exactly the problem the
-old one has — the GoDaddy site is currently tagged `noindex, nofollow`,
-which is a large part of why it gets no traffic.
+**Remove the `X-Robots-Tag` from `_headers`, remove the robots meta tag from
+`index.html` and `404.html`, update every `mag-preview.allcardcomps.com`
+canonical/social/schema URL to the permanent domain, and add that domain's
+absolute URL to `robots.txt` as a sitemap.** The preview intentionally remains
+`noindex`; its `robots.txt` allows crawling so search engines can read and obey
+the HTML noindex directive. GitHub Pages does not apply `_headers`; that file is
+retained as defense in depth for any later host that supports it.
+
+The page already includes a search-focused title and description, canonical
+URL, Open Graph and Twitter metadata, and a `GeneralContractor` JSON-LD graph
+covering the business, website, service counties and service catalog. After the
+permanent domain is inserted, validate the page with Google's Rich Results Test,
+create `sitemap.xml`, connect Google Search Console, and request indexing.
 
 The job photos have already been copied into `assets/img/`; the helper
 script remains in `scripts/` for reference.
@@ -71,8 +79,10 @@ script remains in `scripts/` for reference.
 - **Business hours** — `[CONFIRM HOURS]` in the contact block.
 - **Owner's name** — the old About page said "our dedicated business
   owner," which reads as a placeholder nobody filled in.
-- **Service area** — twelve cities are listed on the assumption of a
-  Fallbrook base. Cut any he won't drive to.
+- **Permanent domain** — needed to replace the temporary URLs in canonical,
+  social-sharing and structured-data metadata and to generate `sitemap.xml`.
+- **Physical business address** — the site currently has only a P.O. box;
+  confirm whether a public street address should appear in local-business data.
 - **Reviews** — three real ones would convert better than anything
   else that could be added to this page.
 - **Google Business Profile** — for a local contractor this outranks
@@ -81,12 +91,9 @@ script remains in `scripts/` for reference.
 
 ## Contact form
 
-The form currently posts nowhere (`action="#"`). Static hosting can't
-process it. Options, cheapest first: a Formspree or Basin endpoint
-(change one attribute), a Cloudflare Worker, or Cloudflare Pages
-Functions. Until one is wired up, the phone number is the only working
-path — which is fine, because it's the one most of his customers will
-use anyway.
+The form prepares a pre-filled email to `bill@maginc.ai` in the visitor's
+default mail app. A hosted form endpoint or serverless function would provide a
+more reliable submission flow later, but phone and email are both functional.
 
 ## Brand
 

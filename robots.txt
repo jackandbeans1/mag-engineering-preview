@@ -1,8 +1,9 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-# Preview only — DELETE THIS FILE BEFORE LAUNCH.
-# At launch, replace with:
+# Preview only. HTML and HTTP noindex directives keep this site out of search;
+# allowing crawling ensures compliant bots can actually read those directives.
+# At launch, replace this file with:
 #   User-agent: *
 #   Allow: /
 #   Sitemap: https://YOURDOMAIN/sitemap.xml
