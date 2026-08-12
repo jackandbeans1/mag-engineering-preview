@@ -232,5 +232,7 @@ textarea{min-height:110px;resize:vertical}
 
 .ftr{background:var(--black);color:rgba(255,255,255,.62);font-family:var(--mono);font-size:.72rem;letter-spacing:.05em}
 .ftr-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;padding-block:1.75rem}
+.studio-credit{width:100%;color:inherit;text-underline-offset:.2em}
+.studio-credit:hover{color:#fff}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.carousel-photo img,.carousel-thumb{transition:none}}
