@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill-rule="nonzero">
+<path id="lb01-interior" fill="#FFFFFF" d="M90 42H422A48 48 0 0 1 470 90V422A48 48 0 0 1 422 470H90A48 48 0 0 1 42 422V90A48 48 0 0 1 90 42Z"></path>
+<path id="lb01-keyline" fill="#000000" fill-rule="evenodd" d="M90 0H422A90 90 0 0 1 512 90V422A90 90 0 0 1 422 512H90A90 90 0 0 1 0 422V90A90 90 0 0 1 90 0ZM90 42H422A48 48 0 0 1 470 90V422A48 48 0 0 1 422 470H90A48 48 0 0 1 42 422V90A48 48 0 0 1 90 42Z"></path>
+<path id="lb01-M" fill="#C40000" d="M34 37H90L135 114L179 37H235V161H198V73L148 161H122L71 73V161H34Z" transform="translate(55.3 108.3) scale(1.4925)"></path>
+</svg>
